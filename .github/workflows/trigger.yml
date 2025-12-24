@@ -1,0 +1,23 @@
+name: Trigger Main Blog Repo Build
+
+# 触发条件：推送到 文章仓库 的 main 分支（所有 .md 文件更新时）
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.md'  # 只在文章文件更新时触发，避免无关提交触发构建
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      # 触发主仓库的 Repository Dispatch 事件
+      - name: Trigger main repo build
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          # 你的 PAT 令牌（需添加到 文章仓库的 Secrets 中，命名为 PERSONAL_ACCESS_TOKEN）
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          # 静态博客仓库地址
+          repository: 57Darling02/57Darling02.github.io
+          event-type: blog-post-updated
+          
