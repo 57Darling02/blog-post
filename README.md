@@ -21,10 +21,12 @@ author: 57Darling02
 ## 法一：快速从零开始搭建一个博客
 
 ### 1.获取模板
-分别fork下面两个项目到自己的仓库：
+分别将下面两个模板项目到自己的仓库：
 
 1. [57Darling02/blog-post(github.com)](https://github.com/57Darling02/blog-post)
 2. [57Darling02/VitePress_butterfly(github.com)](https://github.com/57Darling02/VitePress_butterfly)
+
+![[附件/Pasted image 20251225014254.png]]
 
 第一个用于存放文章，可以设为私密
 第二个放网页源码，必须公开，推荐命名为`[你的GITHUB账号.github.io]`
@@ -66,6 +68,9 @@ author: 57Darling02
 在源码仓库中找到`site_config.ts`,对博客首页进行自定义配置。
 
 将网站变成你的形状😤修改 site_config.ts进行主题配置信息，更改首页背景图、网站名称、侧边栏个人信息等等。
+
+github page中改变部署来源为 action
+![[附件/Pasted image 20251225014512.png]]
 ### 4.将文章仓库克隆到本地并写作
 
 github进入文章仓库中，将其克隆到本地
@@ -93,15 +98,28 @@ layout: doc # 这行不写也行，涉及到自定义页面才会涉及
 
 写完之后git上传到github即可。
 推荐使用obsidian，可以直接在obsidian中将克隆下来的文章仓库打开，并利用第三方插件git更快速的修改文章。
+
 > [!WARNING]
->  需要配置obsidian的内部链接类型为 相对位置
+>  需要配置obsidian的内部链接类型为 **相对位置**，调整 **附件位置**
 
-
+![[附件/Pasted image 20251225014058.png]]
 ## 主题更新
 
 在源码仓库中点击更新上游即可，注意保存配置文件`site_config.ts`
 
 不定期修bug或更新新功能。
+
+
+
+### 自定义域名
+配置域名
+![[附件/Pasted image 20251225014856.png]]
+将域名的DNS指向github提供的服务器IP，具体请看：
+[管理 GitHub Pages 站点的自定义域 - GitHub 文档](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+
+> [!TIPS]
+> 虽然文档中写顶级域名才直接用AAAA或者A记录，子域需要用CNAME
+> 但实际上我试了子域名直接解析A记录好像也能用。
 
 ### 目录结构
 
