@@ -2,6 +2,7 @@
 title: VitePress-Butterfly 主题 README
 date: 2024-05-20
 author: 57Darling02
+layout: doc
 ---
 
 # VitePress-Butterfly 主题
