@@ -84,12 +84,15 @@ cd blog-post
 
 写出你的第一篇文章
 
+> [!Notice]
+> 只有配置了`layout: doc`才会发布在博客
+> 这意味着如果你不希望公开一篇博文，只要没有`layout: doc`即可
 ```md
 ---
 title: 文章标题
 date: 2024-03-20
 author: 作者
-layout: doc # 这行不写也行，涉及到自定义页面才会涉及
+layout: doc
 ---
 
 # Hello World!
@@ -155,9 +158,7 @@ layout: doc # 这行不写也行，涉及到自定义页面才会涉及
 ```bash
 git remote add upstream https://github.com/57Darling02/VitePress_butterfly.git
 
-git fetch upstream
-git checkout main
-git reset --hard upstream/main
+git fetch upstream && git checkout main && git reset --hard upstream/main && git push origin main --force
 ```
 
 
