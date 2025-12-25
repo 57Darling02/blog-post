@@ -103,23 +103,50 @@ layout: doc # 这行不写也行，涉及到自定义页面才会涉及
 >  需要配置obsidian的内部链接类型为 **相对位置**，调整 **附件位置**
 
 ![[附件/Pasted image 20251225014058.png]]
+
+
+
+
+
+### 自定义域名
+完成之前的步骤后，`[你的GITHUB账号]/[你的GITHUB账号].github.io`这个域名应该已经可用。但是如果你希望使用自己的域名，下面提供了两个方法。
+
+1. 使用github直接自定义域名。很方便不需要其他配置。
+>[!WARNING]
+>如果需要使用github托管多个静态网页，这种方法无法绑定多个域名。
+2. 使用vercel+github action,唯一缺点就是需要为vercel额外配置一些参数。
+
+
+
+#### 1.直接用github
+配置域名
+![[附件/Pasted image 20251225014856.png]]
+将域名的DNS指向github提供的服务器IP，具体IP请看：
+[管理 GitHub Pages 站点的自定义域 - GitHub 文档](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+
+> [!TIPS]
+> 虽然文档中写顶级域名才直接用AAAA或者A记录，子域需要用CNAME，但如果你只有一个github page，那么直接给子域名添加A或AAAA记录也没问题。
+
+
+
+
+#### 2.Vercel部署
+如果要部署的网页不止一个，那么你的github page就无法将不同的页面映射到不同的域名上。此时需要借助vercel部署。
+
+模板的workflow中还有一个`vercel.yml`，还需要额外配置三个参数。
+![[附件/Pasted image 20251225111143.png]]
+网上有别人写的教程，在此不再重复：
+[使用 GitHub Actions 自动部署 Vercel 教程 | 变量人生 (bianliangrensheng.cn)](https://www.bianliangrensheng.cn/blog/github-actions-auto-vercel)
+
+
+
+自此
 ## 主题更新
 
 在源码仓库中点击更新上游即可，注意保存配置文件`site_config.ts`
 
 不定期修bug或更新新功能。
 
-
-
-### 自定义域名
-配置域名
-![[附件/Pasted image 20251225014856.png]]
-将域名的DNS指向github提供的服务器IP，具体请看：
-[管理 GitHub Pages 站点的自定义域 - GitHub 文档](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
-
-> [!TIPS]
-> 虽然文档中写顶级域名才直接用AAAA或者A记录，子域需要用CNAME
-> 但实际上我试了子域名直接解析A记录好像也能用。
 
 ### 目录结构
 
