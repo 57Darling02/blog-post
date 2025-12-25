@@ -30,7 +30,7 @@ layout: doc
 
 第一个用于存放文章，可以设为私密
 第二个放网页源码，必须公开，推荐命名为`[你的GITHUB账号.github.io]`
-
+![](附件/Pasted%20image%2020251225014512.png)
 
 ### 2.配置变量
 
@@ -73,7 +73,7 @@ layout: doc
 
 
 github page中改变部署来源为 action
-![[附件/Pasted image 20251225014512.png]]
+
 ### 4.将文章仓库克隆到本地并写作
 
 github进入文章仓库中，将其克隆到本地
@@ -106,10 +106,12 @@ layout: doc
 推荐使用obsidian，可以直接在obsidian中将克隆下来的文章仓库打开，并利用第三方插件git更快速的修改文章。
 
 > [!WARNING]
->  需要配置obsidian的内部链接类型为 **相对位置**，调整 **附件位置**
+>  需要配置obsidian的内部链接类型
+>   **相对位置**，调整 **附件位置**
+>  **不使用WiKi链接**
 
-![[附件/Pasted image 20251225014058.png]]
-
+********
+![](附件/Pasted%20image%2020251225154231.png)
 
 
 
@@ -126,7 +128,7 @@ layout: doc
 
 #### 1.直接用github
 配置域名
-![[附件/Pasted image 20251225014856.png]]
+![](附件/Pasted%20image%2020251225014856.png)
 将域名的DNS指向github提供的服务器IP，具体IP请看：
 [管理 GitHub Pages 站点的自定义域 - GitHub 文档](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 
@@ -142,7 +144,7 @@ layout: doc
 模板的workflow中还有一个`vercel.yml`，还需要额外配置三个参数。
 `VERCEL_ORG_ID` `VERCEL_PROJECT_ID` `VERCEL_TOKEN`
 
-![[附件/Pasted image 20251225111143.png]]
+
 [Two Ways to Find Vercel ORG_ID and PROJECT_ID (codenote.net)](https://codenote.net/en/posts/how-to-find-vercel-org-project-ids/)
 简单来说：
 1. 在vercel中配置token
